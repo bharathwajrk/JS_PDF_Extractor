@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Your custom CSS and other imports here -->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <link href="https://mozilla.github.io/pdf.js/web/viewer.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/pdfViewerSelection.js"></script>
+    <script src="js/jquery.highlight.js"></script>
+    <script src="https://unpkg.com/pdfjs-dist@latest/build/pdf.min.js"></script>
+    <script src="https://raw.githubusercontent.com/mozilla/pdf.js/master/web/ui_utils.js"></script>
+  </head>
+  <body>
+    <div style="display: flex;">
+      <!-- <button id="showInput" class="showInput" onclick="displayInputFields(true);"><i class="fa fa-eye"></i> Show Input</button>
+      <button id="hideInput" class="hideInput" onclick="displayInputFields(false);"><i class="fa fa-eye-slash"></i> Hide Input</button> -->
+      <span style="width: 10px"></span>
+      <button class="execute-run" onclick='executePDFExtract()'><i class="fa fa-play" aria-hidden="true"></i> Run</button>
+    </div>
+    <br/>
+
+  <fieldset id="pdf-extract-inputs-fieldset" style="margin: 0rem 1rem;">
+    <legend>PDF Extractor Inputs:</legend>
+    <div id="pdf-extract-inputs" class="pdf-extract-inputs">
+      <div style="display: flex">
+        <label style="min-width: 10rem;">Field Labels</label>
+        <span style="min-width: 10px;"></span>
+        <textarea id="fieldLabels" rows=5 cols=100></textarea>
+        <span style="min-width: 10px;"></span>
+        <label>Background Color</label>
+        <span style="min-width: 10px;"></span>
+        <input id="backgroundColor" type="text" style="height: 2rem;"/>
+        <span style="min-width: 10px;"></span>
+        <label>Edit Form</label>
+        <span style="min-width: 10px;"></span>
+        <input id="isEditForm" type="checkbox"/>
+      </div>
+      <br style="clear:both;"/>
+      <div style="display: flex">
+        <label style="min-width: 10rem;">PDF URL</label>
+        <span style="min-width: 10px;"></span>
+        <textarea id="pdfUrl" rows=3 cols=100></textarea>
+      </div>
+      <span style="clear:both;"></span>
+    </div>
+  </fieldset>
+  <br/>
+  <fieldset id="pdf-extract-output-fieldset" style="margin: 0rem 1rem;">
+    <legend>PDF Extractor Output:</legend>
+    <button style="margin: 0rem 1rem;" onclick="copyOutputToClipboard();"><i class="fa fa-clipboard" aria-hidden="true"></i></button>
+    <div id="output-value-json" style="padding: 1rem 1rem;"></div>
+  </fieldset>
+  <br/>
+   <!-- Your custom HTML code here -->
+   <div id="pdf-error-message" class="pdf-error-message"></div>
+   <div id="flex-container" class="flex-container">
+    <div id='pdf-reader-left-pane' class="flex-child"><br/></div>
+    <div id='pdf-reader-right-parent-pane' class="flex-child">
+      <div>
+        <button id="prev" title="Previous"><i class="fa fa-angle-left"></i></button>
+        <button id="next" title="Next"><i class="fa fa-angle-right"></i></button>
+        <span id="pagination"><span id="page_num"></span> / <span id="page_count"></span></span>
+        <span style='clear:both;'></span>
+      </div>
+      <br/>
+      <canvas id='pdf-viewer-canvas'></canvas>
+      <div id="textLayer"></div>
+    </div>
+  </div>
+  </body>
+  <script type="text/javascript">
+    var pdfValues, selectedInputElem, tempDetails = {}, pageNo = 1, xCoord = null, yCoord = null;
+    var selElem;
+
+    // fieldLabels = allParameters['fieldLabels'];
+    // pdfUrl = allParameters['pdfUrl'];
+    // backgroundColor = allParameters['backgroundColor'] ? allParameters['backgroundColor'] : '#e8e8e8';
+    // isEditForm = allParameters['editForm'] ? allParameters['editForm'] : false;
+
+
+  </script>
+</html>

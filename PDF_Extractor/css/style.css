@@ -1,0 +1,116 @@
+
+.highlight {
+    background-color: #3f1ff5;
+}
+
+#prev, #next{
+    background-color: #3f1ff5;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 3rem;
+}
+
+.pdf-error-message{
+    color: #940101;
+    display: none;
+    background-color: rgb(255, 197, 197);
+    border-color:rgb(247, 130, 101);
+    padding: 1% 2%;
+    margin: 1%;
+    width: 94%;
+}
+
+.flex-container {
+    display: none;
+}
+
+.left-pane-border{
+    border-right: 2px solid rgb(110, 110, 110);
+}
+
+#pdf-reader-left-pane{
+    margin-top: 1rem;
+    padding: 5px;
+}
+
+.flex-child {
+    flex: 1;
+}
+
+.flex-child:first-child {
+    margin-right: 5px;
+}
+
+#textLayer {
+    position: absolute;
+     left: 0;
+     top: 0;
+     right: 0;
+     bottom: 0;
+     overflow: hidden;
+     opacity: 0.2;
+     line-height: 1.0;
+ }
+
+ #textLayer > span {
+     color: transparent;
+     position: absolute;
+     white-space: pre;
+     cursor: text;
+     transform-origin: 0% 0%;
+ }
+
+ #textLayer > span::selection {
+    background: rgb(6 62 220);
+  }
+
+.fieldValue-label{
+    display: inline-block;
+    width: 150px;
+    text-align: left;
+}
+
+.fieldValue-inp:focus{
+    outline: 2px solid rgb(93, 247, 4);
+}
+
+.pdf-extract-inputs{
+  padding: 1rem;
+}
+
+.execute-run{
+  background-color: #4CAF50;
+  color: #ffffff;
+  font-weight: bold;
+  border: none;
+  width: 10rem;
+  height: 3rem;
+  float: right;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.showInput, .hideInput{
+  background-color: #4CAF50;
+  color: #ffffff;
+  font-weight: bold;
+  border: none;
+  width: 15rem;
+  height: 3rem;
+  float: right;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.showInput{
+  display: none;
+}
+
+.execute-run:hover, .showInput:hover, .hideInput:hover{
+  background-color: #029608;
+}
